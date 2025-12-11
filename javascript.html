@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <p id="demo"></p>
+  <script>
+    let text="";
+    for(i=1; i<=60;i++){
+        if(i%2 === 0){
+            text +=i +"";
+        }
+    }
+    document.getElementById("demo").innerHTML=text;
+  </script>
+  
+<h2>Check Prime Number</h2>
+
+<input type="number" id="num" placeholder="Enter a number">
+<button onclick="checkPrime()">Check</button>
+
+<p id="result"></p>
+
+<script>
+function checkPrime() {
+    let n = parseInt(document.getElementById("num").value);
+    let isPrime = true;
+
+    if (n <= 1) {
+        isPrime = false;
+    } else {
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    }
+
+    if (isPrime) {
+        document.getElementById("result").innerHTML = n + " is a PRIME number.";
+    } else {
+        document.getElementById("result").innerHTML = n + " is NOT a prime number.";
+    }
+}
+</script>
+<h2>Fibonacci Series</h2>
+
+<input type="number" id="count" placeholder="Enter how many terms">
+<button onclick="printFibonacci()">Print</button>
+
+<p id="result"></p>
+
+<script>
+function printFibonacci() {
+    let n = parseInt(document.getElementById("count").value);
+    let fib = [0, 1];
+    let output = "";
+
+    if (n <= 0) {
+        document.getElementById("result").innerHTML = "Enter a positive number.";
+        return;
+    }
+
+    if (n === 1) {
+        output = "0";
+    } else {
+        output = "0 1 ";
+
+        for (let i = 2; i < n; i++) {
+            fib[i] = fib[i - 1] + fib[i - 2];
+            output += fib[i] + " ";
+        }
+    }
+
+    document.getElementById("result").innerHTML = output;
+}
+</script>
+<h2>Triangle Star Pattern (Check Console)</h2>
+
+<button onclick="printStars()">Print Pattern</button>
+
+<script>
+function printStars() {
+    let rows = 5;  // You can change number of rows
+
+    for (let i = 1; i <= rows; i++) {
+        let star = "";
+        for (let j = 1; j <= i; j++) {
+            star += "* ";
+        }
+        console.log(star);
+    }
+}
+</script>
+</body>
+</html>

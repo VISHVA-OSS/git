@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Reverse a Number using While Loop</h2>
+
+<input type="number" id="num" placeholder="Enter a number">
+<button onclick="reverseNumber()">Reverse</button>
+
+<p id="result"></p>
+
+<script>
+function reverseNumber() {
+    let n = parseInt(document.getElementById("num").value);
+    let rev = 0;
+
+    while (n > 0) {
+        let digit = n % 10;     // get last digit
+        rev = rev * 10 + digit; // add digit to reverse number
+        n = Math.floor(n / 10); // remove last digit
+    }
+
+    document.getElementById("result").innerHTML = "Reversed Number: " + rev;
+}
+</script>
+</body>
+</html>

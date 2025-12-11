@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div ~p{
+            background-color: yellow;
+        }
+       a:link{
+        color: rgb(162, 218, 22);
+       }
+       a:visited{
+        color: green;
+       }
+       a:hover{
+        color: rgb(172, 210, 3);
+       }
+       a:active{
+        color: blue;
+       }
+       img{
+        opacity: 0.3;
+       }
+       h1::after{
+        content: url(./../images/task1.jpg);
+       }
+       </style>
+</head>
+<body>
+    <p><b><a href="./../task/task.html" target="_blank">THIS IS A LINK</a></b></p>
+    <div>
+    <p>paragraph 1 in div</p>
+    <p>paragraph 2 in div</p>
+    </div>
+    <p>paragraph 3 in div</p>
+    <p>paragraph 4 in div</p>
+    <h1>heading 1</h1>
+    <img src="./../images/task2.jpg" alt="">
+</body>
+</html>

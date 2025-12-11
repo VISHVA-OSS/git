@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+
+    <script>
+        // Given string
+        let str = "Hello World".toLowerCase();
+
+        let count = 0;
+        let vowels = "aeiou";
+
+        // Count vowels
+        for (let i = 0; i < str.length; i++) {
+            if (vowels.includes(str[i])) {
+                count++;
+            }
+        }
+
+        // Display result
+        document.getElementById("result").innerHTML =
+            "Number of vowels : " + count;
+    </script>
+    <h2>Check If Two Strings Are Anagrams</h2>
+
+    <input type="text" id="str1" placeholder="Enter first string">
+    <input type="text" id="str2" placeholder="Enter second string">
+    <button onclick="checkAnagram()">Check</button>
+
+    <h3>Output:</h3>
+    <p id="result"></p>
+
+    <script>
+        function checkAnagram() {
+            let s1 = document.getElementById("str1").value.toLowerCase().replace(/\s+/g, '');
+            let s2 = document.getElementById("str2").value.toLowerCase().replace(/\s+/g, '');
+
+            // Sort both strings
+            let sorted1 = s1.split('').sort().join('');
+            let sorted2 = s2.split('').sort().join('');
+
+            if (sorted1 === sorted2) {
+                document.getElementById("result").innerHTML = "The strings are ANAGRAMS.";
+            } else {
+                document.getElementById("result").innerHTML = "The strings are NOT anagrams.";
+            }
+        }
+    </script>
+</body>
+</html>
