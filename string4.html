@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Check Alphabetic Characters</h2>
+
+    <!-- Given string -->
+    <p id="inputText">HelloWorld</p>
+
+    <!-- Output -->
+    <p id="output"></p>
+
+    <script>
+        // Get text from DOM
+        let text = document.getElementById("inputText").innerText;
+
+        let isAlphabetic = true;
+
+        // Check each character
+        for (let i = 0; i < text.length; i++) {
+            if (!((text[i] >= 'a' && text[i] <= 'z') ||
+                  (text[i] >= 'A' && text[i] <= 'Z'))) {
+                isAlphabetic = false;
+                break;
+            }
+        }
+
+        // Display result
+        document.getElementById("output").innerText =
+            isAlphabetic
+                ? "The string contains ONLY alphabetic characters."
+                : "The string contains NON-alphabetic characters.";
+    </script>
+</body>
+</html>

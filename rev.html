@@ -6,26 +6,48 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Reverse a Number using While Loop</h2>
+     <p id="inputText">Welcome to JavaScript</p>
 
-<input type="number" id="num" placeholder="Enter a number">
-<button onclick="reverseNumber()">Reverse</button>
+    <!-- Output -->
+    <p id="output"></p>
 
-<p id="result"></p>
+    <script>
+        // Get string from DOM
+        let text = document.getElementById("inputText").innerText;
 
-<script>
-function reverseNumber() {
-    let n = parseInt(document.getElementById("num").value);
-    let rev = 0;
+        // Reverse each word
+        let result = text
+            .split(" ").reverse().join("")
+        // Display result in DOM
+        document.getElementById("output").innerText = result;
+    </script>
+     <h2>Check If Two Strings Are Same After Reversing</h2>
 
-    while (n > 0) {
-        let digit = n % 10;     // get last digit
-        rev = rev * 10 + digit; // add digit to reverse number
-        n = Math.floor(n / 10); // remove last digit
-    }
+    <input type="text" id="str1" placeholder="Enter first string">
+    <input type="text" id="str2" placeholder="Enter second string">
+    <button onclick="checkStrings()">Check</button>
 
-    document.getElementById("result").innerHTML = "Reversed Number: " + rev;
-}
-</script>
+    <h3>Output:</h3>
+    <p id="result"></p>
+
+    <script>
+        function checkStrings() {
+            let s1 = document.getElementById("str1").value;
+            let s2 = document.getElementById("str2").value;
+
+            // Reverse second string
+            let reversed = s2.split("").reverse().join("");
+
+            // Compare
+            if (s1 === reversed) {
+                document.getElementById("result").innerHTML = "Both strings are SAME after reversing.";
+            } else {
+                document.getElementById("result").innerHTML = "Strings are NOT same after reversing.";
+            }
+        }
+    </script>
+    
+
+    
 </body>
 </html>

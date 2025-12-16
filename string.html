@@ -6,20 +6,22 @@
     <title>Document</title>
 </head>
 <body>
+    <h2>Reverse Each Word in a Sentence</h2>
+
+    <p id="output"></p>
+
     <script>
-       var furitname="apple";
-       var count=10;
-       var price=100;
-       var total=count*price;
-       console.log(furitname)
-       console.log(total)
-    </script>
-    <script>
-        function hi()
-        {
-            console.log("welcome to functions");
-        }
-        hi()
+        // Sentence
+        let sentence = "Welcome to JavaScript";
+
+        // Reverse each word
+        let result = sentence
+            .split(" ")
+            .map(word => word.split("").reverse().join(""))
+            .join(" ");
+
+        // Display output
+        document.getElementById("output").innerHTML = result;
     </script>
 </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Count Alphabets and Digits</h2>
+
+    <!-- Given string -->
+    <p id="inputText">Hello123 World45</p>
+
+    <!-- Output -->
+    <p id="output"></p>
+
+    <script>
+        // Get text from DOM
+        let text = document.getElementById("inputText").innerText;
+
+        let alphaCount = 0;
+        let digitCount = 0;
+
+        // Count alphabets and digits
+        for (let i = 0; i < text.length; i++) {
+            if ((text[i] >= 'a' && text[i] <= 'z') || 
+                (text[i] >= 'A' && text[i] <= 'Z')) {
+                alphaCount++;
+            } else if (text[i] >= '0' && text[i] <= '9') {
+                digitCount++;
+            }
+        }
+
+        // Display result
+        document.getElementById("output").innerText =
+            "Alphabets: " + alphaCount + " | Digits: " + digitCount;
+    </script>
+</body>
+</html>
