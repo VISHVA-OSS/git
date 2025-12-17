@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="input">welcome to javascript</p>
+    <p id="output"></p>
+    <script>
+        let text = document.getElementById("input").innerHTML
+        let result = text
+        .split(" ")
+        .map(word => word.split("").reverse().join(""))
+        .join(" ");
+        document.getElementById("output").innerHTML=result;
+    </script>
+    <p id="demo"></p>
+    <script>
+        let str = "aeiou";
+        let count = 0;
+        let vowels = "aeiou";
+        for(let i = 0; i < str.length; i++){
+            if(vowels.includes(str[i])){
+                count++;
+            }
+        }
+        document.getElementById("demo").innerHTML = "Number Of Vowels:"+count;
+    </script>
+</body>
+</html>
